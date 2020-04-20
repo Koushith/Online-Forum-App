@@ -14,7 +14,9 @@
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
-    "mongoose": "^5.9.9"
+    "marked": "^0.8.2",
+    "mongoose": "^5.9.9",
+    "slugify": "^1.4.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
