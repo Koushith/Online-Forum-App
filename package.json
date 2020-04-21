@@ -2,24 +2,26 @@
   "name": "task",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "devStart": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Koushith/Online-Forum-App.git"
+  },
+  "author": "Koushith_Amin",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Koushith/Online-Forum-App/issues"
+  },
+  "homepage": "https://github.com/Koushith/Online-Forum-App#readme",
   "dependencies": {
-    "dompurify": "^2.0.8",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "hbs": "^4.1.1",
-    "jsdom": "^16.2.2",
-    "marked": "^0.8.2",
-    "method-override": "^3.0.0",
-    "mongoose": "^5.9.9",
-    "slugify": "^1.4.0"
+    "mongoose": "^5.9.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
