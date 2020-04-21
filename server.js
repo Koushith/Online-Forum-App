@@ -1,11 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
+// model
+const Article = require("./models/article");
 const articleRouter = require("./routes/articles");
+// method ovrride
+const methodOverride = require("method-override");
 const app = express();
 
 mongoose.connect("mongodb://localhost/blogs", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndexes: true //errors thrown in the console
 });
 
 // middleware config
@@ -14,19 +19,14 @@ app.set("view engine", "ejs");
 
 // access all the different options in the form.. body parcer
 app.use(express.urlencoded({ extended: false }));
-app.get("/", (req, res) => {
-  const articles = [
-    {
-      title: "Post 1",
-      createdAt: new Date(),
-      description: "Test Description"
-    },
-    {
-      title: "Post 2",
-      createdAt: new Date(),
-      description: "Test Description"
-    }
-  ];
+
+// override
+app.use(methodOverride("_method"));
+
+app.get("/", async (req, res) => {
+  const articles = await Article.find().sort({
+    createdAt: "desc"
+  }); //this will get every single article
   res.render("articles/index", {
     articles: articles
   });
