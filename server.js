@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const articleRouter = require("./routes/articles");
 const app = express();
 
-mongoose.connect("mongodb://localhost/blog", {
+mongoose.connect("mongodb://localhost/blogs", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -11,8 +11,7 @@ mongoose.connect("mongodb://localhost/blog", {
 // middleware config
 
 app.set("view engine", "ejs");
-// user article router
-app.use("/articles", articleRouter); //loc-its in articles.js file
+
 // access all the different options in the form.. body parcer
 app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
@@ -32,6 +31,7 @@ app.get("/", (req, res) => {
     articles: articles
   });
 });
-
+// user article router
+app.use("/articles", articleRouter); //loc-its in articles.js file
 app.listen(5000);
 console.log("Server is listening on Port 5000");
