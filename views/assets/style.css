@@ -1,0 +1,10 @@
+/* gloal */
+
+:root {
+  --primary-color: #3b49df;
+  --header-color: #fff;
+}
+
+.btn-primary {
+  background: var(--primary-color) !important;
+}
