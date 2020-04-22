@@ -37,5 +37,4 @@ app.get('/', async (req, res) => {
 });
 // user article router
 app.use('/articles', articleRouter); //loc-its in articles.js file
-app.listen(5000);
-console.log('Server is listening on Port 5000');
+app.listen(process.env.PORT || 5000, () => console.log('All Good'));
