@@ -25,6 +25,6 @@
 
 * [ ] Convert into Vue Components
 
-[Live Website](http://www.koushith.com/netlify.com)
+[Live Website](https://hack-on-dev.herokuapp.com/)
 
 [md Cheat Sheets](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
