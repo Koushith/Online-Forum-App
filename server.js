@@ -8,11 +8,24 @@ const methodOverride = require('method-override');
 const path = require('path');
 const app = express();
 
-mongoose.connect('mongodb://localhost/blogs', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndexes: true //errors thrown in the console
-});
+// mongoose.connect('mongodb://localhost/blogs', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndexes: true //errors thrown in the console
+// });
+
+//Connect to MongoDB
+//const db = require('./config/keys').mongoURI;
+
+// Connect to MongoDB
+// mongoose
+//   .connect(db, { useNewUrlParser: true })
+//   .then(() => console.log('MongoDB Connected'))
+//   .catch(err => console.log(err));
+
+const connectDB = require('./config/keys');
+
+connectDB();
 
 // middleware config
 
@@ -24,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'views')));
 // access all the different options in the form.. body parcer
 app.use(express.urlencoded({ extended: false }));
 
-// override
+// override default form actions
 app.use(methodOverride('_method'));
 
 app.get('/', async (req, res) => {
