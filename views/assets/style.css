@@ -8,3 +8,11 @@
 .btn-primary {
   background: var(--primary-color) !important;
 }
+
+/* hideonmob */
+
+@media screen and (max-width: 600px) {
+  .hideonmob {
+    display: none;
+  }
+}
